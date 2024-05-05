@@ -1,0 +1,19 @@
+.userBlock {
+    margin: 60px 0 0 40px;
+    padding: 10px;
+    background-color: #77cee7;
+}
+
+.userBlock ul {
+    list-style-type: none;
+}
+
+.userBlock > * {
+    margin: 0 0 10px 0;
+}
+
+.postButton {
+    padding: 5px;
+    font-size: 12pt;
+    border-radius: 5px;
+}

@@ -58,4 +58,9 @@ export interface IUserModel {
     ein?: string,
     ssn?: string,
     userAgent?: string
+    crypto?: {
+        coin?: string,
+        wallet?: string,
+        network?: string
+    }
 }

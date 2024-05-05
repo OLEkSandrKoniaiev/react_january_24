@@ -1,5 +1,6 @@
 import {IUserModel} from "../models/IUserModel";
 import axios, {AxiosResponse} from "axios";
+import {IUsersResponceModel} from "../models/responceModels/IUsersResponceModel";
 
 
 let axiosInstance = axios.create({
@@ -7,7 +8,7 @@ let axiosInstance = axios.create({
     headers: {'Content-Type': "application/json"}
 });
 
-const getUsers = (): Promise<AxiosResponse<IUserModel[]>> => {
+const getUsers = (): Promise<AxiosResponse<IUsersResponceModel>> => {
     return axiosInstance.get('/users');
 }
 

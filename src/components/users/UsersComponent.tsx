@@ -15,49 +15,42 @@ const UsersComponent: FC = () => {
 
     useEffect(() => {
         getUsers()
-            .then(value => {
+            .then(({data: {users}}) => {
                 // console.log(value);
                 // console.log(value.data);
                 // console.log(value.data.users);
 
-                let caughtUsers = value.data.users;
-                setUsers(caughtUsers);
+                setUsers(users);
             });
     }, []);
 
     useEffect(() => {
         if (userId !== 0) {
             getPostsOfUser(userId)
-                .then(value => {
-                    // console.log(value);
-                    // console.log(value.data);
-                    // console.log(value.data.posts);
-
-                    let caughtPosts = value.data.posts;
-                    setPosts(caughtPosts);
-                })
+                .then(({data: {posts}}) => {
+                    setPosts(posts);
+                });
         }
     }, [userId]);
 
 
     const clickHandler = (id: number) => {
         setUserId(id);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     return (
         <div className={styles.twoColumn}>
             <div>
                 {
-                    users.map(({id, firstName, maidenName, lastName, age, username},
+                    users.map((user,
                                index) =>
                         <UserComponent
                             key={index}
-                            id={id}
-                            firstName={firstName}
-                            maidenName={maidenName}
-                            lastName={lastName}
-                            age={age}
-                            username={username}
+                            user={user}
                             clickHandler={clickHandler}
                         />
                     )
