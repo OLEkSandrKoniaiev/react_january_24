@@ -1,0 +1,12 @@
+.mainBody {
+    margin-left: 20px;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+
+    border-radius: 50%;
+
+    margin: 5px;
+}
