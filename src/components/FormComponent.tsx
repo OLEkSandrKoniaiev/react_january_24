@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {postValidator} from "../validators/post.validator";
 import {IFormModel} from "../models/IFormModel";
+import styles from "./Form.module.css"
 
 
 const FormComponent: FC = () => {
@@ -34,19 +35,25 @@ const FormComponent: FC = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit(savePost)}>
-                <input type={"number"} {...register("userId")}/>
-                {
-                    errors.userId && <span>{errors.userId.message}</span>
-                }
-                <input type={"string"} {...register("title")}/>
-                {
-                    errors.title && <span>{errors.title.message}</span>
-                }
-                <input type={"string"} {...register("body")}/>
-                {
-                    errors.body && <span>{errors.body.message}</span>
-                }
+            <form onSubmit={handleSubmit(savePost)} className={styles.formContainer}>
+                <div>
+                    <input type={"number"} {...register("userId")}/>
+                    {
+                        errors.userId && <span>{errors.userId.message}</span>
+                    }
+                </div>
+                <div>
+                    <input type={"string"} {...register("title")}/>
+                    {
+                        errors.title && <span>{errors.title.message}</span>
+                    }
+                </div>
+                <div>
+                    <input type={"string"} {...register("body")}/>
+                    {
+                        errors.body && <span>{errors.body.message}</span>
+                    }
+                </div>
                 <button disabled={!isValid}>send post</button>
             </form>
         </>

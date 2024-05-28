@@ -5,9 +5,9 @@ import FormComponent from "./components/FormComponent";
 
 const App = () => {
     return (
-        <>
+        <div className={"bodyContainer"}>
             <FormComponent/>
-        </>
+        </div>
     );
 };
 

@@ -2,20 +2,14 @@ import Joi from "joi";
 
 export const postValidator = Joi
     .object({
-        userId: Joi.number().min(1).max(999999).required().messages({
-            "number.base": "user id must be a num",
-            "number.min.base": "user id is unavailable",
-            "number.max.base": "user id is too big",
-            "number.required.base": "used id is required"
+        userId: Joi.number().min(1).max(10).required().messages({
+            "number.min": "User ID must be grater than 0",
+            "number.max": "User ID must be less than 11"
         }),
-        title: Joi.string().pattern(/.*\b\w+\b.*/).max(256).required().messages({
-            "string.pattern.base": "title must contain at least one word",
-            "string.max.base": "title is too long",
-            "string.required.base": "title is required"
+        title: Joi.string().max(128).required().messages({
+            "string.max.base": "Title is too long"
         }),
-        body: Joi.string().pattern(/.*\b\w+\b.*/).max(65536).required().messages({
-            "string.pattern.base": "body must contain at least one word",
-            "string.max.base": "body is too long",
-            "string.required.base": "body is required"
+        body: Joi.string().max(4096).required().messages({
+            "string.max.base": "Body is too long"
         })
     })
