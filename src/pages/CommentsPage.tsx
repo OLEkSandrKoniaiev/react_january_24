@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {ICommentModel} from "../models/ICommentModel";
 import {commentApiService} from "../services/api.service";
-import styles from "../styles/General.module.css"
+import CommentsComponent from "../components/CommentsComponent";
 
 const CommentsPage: FC = () => {
 
@@ -13,14 +13,7 @@ const CommentsPage: FC = () => {
 
     return (
         <div>
-            {comments?.map(comment =>
-                <div key={comment.id} className={styles.marginY10}>
-                    {comment.id} - PostID: {comment.postId} - {comment.email}
-                    <br/>
-                    <b>{comment.name}</b>
-                    <br/>
-                    <span className={styles.truncate}>{comment.body}</span>
-                </div>)}
+            <CommentsComponent comments={comments}/>
         </div>
     );
 };

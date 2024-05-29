@@ -1,15 +1,13 @@
-import React, {FC, useEffect, useState} from 'react';
-import {userApiService} from "../services/api.service";
+import React, {FC} from 'react';
 import {IUserModel} from "../models/IUserModel";
 import UserComponent from "./UserComponent";
 
-const UsersPage: FC = () => {
+interface IProps {
+    users: IUserModel[] | undefined;
+}
 
-    const [users, setUsers] = useState<IUserModel[]>();
+const UsersPage: FC<IProps> = ({users}) => {
 
-    useEffect(() => {
-        userApiService.getAllUsers().then(value => setUsers(value.data));
-    }, []);
 
     return (
         <div>
