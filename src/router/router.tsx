@@ -8,11 +8,15 @@ import CommentsPage from "../pages/CommentsPage";
 
 
 export const routerConfig = createBrowserRouter([
-    {path: '/', element: <MainLayout/>, children: [
+    {
+        path: '/',
+        element: <MainLayout/>,
+        errorElement: <h2>Please use only the correct url</h2>,
+        children: [
             {index: true, element: <HomePage/>},
             {path: '/users', element: <UsersPage/>},
             {path: '/posts', element: <PostsPage/>},
             {path: '/comments', element: <CommentsPage/>}
-        ]}
+        ]
+    }
 ]);
-
