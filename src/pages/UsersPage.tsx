@@ -1,23 +1,12 @@
-import React, {FC, useEffect, useState} from 'react';
-import {userApiService} from "../services/api.service";
-import {IUserModel} from "../models/IUserModel";
-import styles from "../styles/General.module.css";
+import React from 'react';
+import UsersComponent from "../components/UsersComponent";
+import {Outlet} from "react-router-dom";
 
-const UsersPage: FC = () => {
-
-    const [users, setUsers] = useState<IUserModel[]>();
-
-    useEffect(() => {
-        userApiService.getAllUsers().then(value => setUsers(value.data));
-    }, []);
-
+const UsersPage = () => {
     return (
         <div>
-            {users?.map(user =>
-                <div key={user.id} className={styles.marginY10}>
-                    {user.id} - {user.name} - {user.username} - {user.email}
-                </div>)
-            }
+            <UsersComponent/>
+            <Outlet/>
         </div>
     );
 };

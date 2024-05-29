@@ -9,8 +9,11 @@ let axiosInstance = axios.create({
 })
 
 const userApiService = {
-    getAllUsers: async (): Promise<AxiosResponse<IUserModel[]>> => {
+    getAllUsers: (): Promise<AxiosResponse<IUserModel[]>> => {
         return axiosInstance.get("/users");
+    },
+    getPostsOfUser: (userId: string): Promise<AxiosResponse<IPostModel[]>> => {
+        return axiosInstance.get(`/users/${userId}/posts`);
     }
 
     //     return axiosInstance.get("/users")
@@ -29,13 +32,13 @@ const userApiService = {
 }
 
 const postApiService = {
-    getAllPosts: ():Promise<AxiosResponse<IPostModel[]>> => {
+    getAllPosts: (): Promise<AxiosResponse<IPostModel[]>> => {
         return axiosInstance.get("/posts");
     }
 }
 
 const commentApiService = {
-    getAllComments: ():Promise<AxiosResponse<ICommentModel[]>> => {
+    getAllComments: (): Promise<AxiosResponse<ICommentModel[]>> => {
         return axiosInstance.get("/comments");
     }
 }
