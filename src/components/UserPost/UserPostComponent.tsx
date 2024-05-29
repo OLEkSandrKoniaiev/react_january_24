@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {IPostModel} from "../models/IPostModel";
-import styles from "../styles/General.module.css";
+import {IPostModel} from "../../models/IPostModel";
+import styles from "../../styles/General.module.css";
 
 interface IProps {
     post: IPostModel;

@@ -34,6 +34,9 @@ const userApiService = {
 const postApiService = {
     getAllPosts: (): Promise<AxiosResponse<IPostModel[]>> => {
         return axiosInstance.get("/posts");
+    },
+    getCommentsOfPost: (postId: string): Promise<AxiosResponse<ICommentModel[]>> => {
+        return axiosInstance.get(`/posts/${postId}/comments`);
     }
 }
 

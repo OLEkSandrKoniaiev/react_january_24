@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import styles from "../styles/General.module.css";
-import {ICommentModel} from "../models/ICommentModel";
+import {ICommentModel} from "../../models/ICommentModel";
+import styles from "../../styles/General.module.css";
 
 interface IProps {
     comment: ICommentModel;
 }
 
-const CommentComponent: FC<IProps> = ({comment}) => {
+const PostCommentComponent: FC<IProps> = ({comment}) => {
     return (
         <div key={comment.id} className={styles.marginY10}>
             {comment.id} - PostID: {comment.postId} - {comment.email}
@@ -18,4 +18,4 @@ const CommentComponent: FC<IProps> = ({comment}) => {
     );
 };
 
-export default CommentComponent;
+export default PostCommentComponent;

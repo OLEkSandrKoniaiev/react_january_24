@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {IPostModel} from "../models/IPostModel";
-import UserPostComponent from "./UserPostComponent";
+import {IPostModel} from "../../models/IPostModel";
+import UserPostComponent from "../UserPost/UserPostComponent";
 
 interface IProps {
     posts: IPostModel[] | undefined;

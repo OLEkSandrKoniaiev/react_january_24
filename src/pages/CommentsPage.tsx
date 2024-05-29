@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {ICommentModel} from "../models/ICommentModel";
 import {commentApiService} from "../services/api.service";
-import CommentsComponent from "../components/CommentsComponent";
+import CommentsComponent from "../components/Comments/CommentsComponent";
 
 const CommentsPage: FC = () => {
 

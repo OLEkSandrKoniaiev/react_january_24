@@ -10,3 +10,14 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.navLink {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navLinkActive {
+    text-decoration: none;
+    color: blue;
+}

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {IUserModel} from "../models/IUserModel";
-import UserComponent from "./UserComponent";
+import {IUserModel} from "../../models/IUserModel";
+import UserComponent from "../User/UserComponent";
 
 interface IProps {
     users: IUserModel[] | undefined;

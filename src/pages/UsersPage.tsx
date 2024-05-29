@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import UsersComponent from "../components/UsersComponent";
+import UsersComponent from "../components/Users/UsersComponent";
 import {Outlet} from "react-router-dom";
 import {IUserModel} from "../models/IUserModel";
 import {userApiService} from "../services/api.service";

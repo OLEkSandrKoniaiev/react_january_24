@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import UserPostsComponent from "../components/UserPostsComponent";
+import UserPostsComponent from "../components/UserPosts/UserPostsComponent";
 import {IPostModel} from "../models/IPostModel";
 import {userApiService} from "../services/api.service";
 import {useLocation, useParams} from "react-router-dom";
