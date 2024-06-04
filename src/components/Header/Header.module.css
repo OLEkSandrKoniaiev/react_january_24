@@ -1,0 +1,27 @@
+.navBlock {
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 20px 0;
+
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.navList {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.navLink {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navLinkActive {
+    text-decoration: none;
+    color: #c7c7c7;
+    font-weight: bold;
+}
