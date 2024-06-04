@@ -11,7 +11,7 @@ const FormComponent = () => {
         register
     } = useForm<AuthDataModel>({defaultValues: {username: 'Less204', password: 'Pa$$word1'}});
 
-    const [isAuthState, setIsAuthState] = useState<boolean>(false);
+    const [isAuthState, setIsAuthState] = useState<boolean>();
     
     const auth = async (formData: AuthDataModel) => {
         const isAuth = await authService.authentication(formData);
@@ -23,7 +23,7 @@ const FormComponent = () => {
             <h3>Login form</h3>
             <div>
                 {
-                    isAuthState? <span>ok</span> : <span>not ok</span>
+                    isAuthState && (isAuthState? <span>ok</span> : <span>not ok</span>)
                 }
             </div>
             <form onSubmit={handleSubmit(auth)}>
