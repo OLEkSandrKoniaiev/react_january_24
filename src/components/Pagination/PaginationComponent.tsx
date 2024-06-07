@@ -2,6 +2,7 @@ import React, {FC, useEffect, useState} from 'react';
 import {useSearchParams} from "react-router-dom";
 import {ICarPaginatedModel} from "../../models/ICarPaginatedModel";
 import {carService} from "../../services/carService";
+import CarsComponent from "../Cars/CarsComponent";
 
 
 const PaginationComponent: FC = () => {
@@ -39,6 +40,8 @@ const PaginationComponent: FC = () => {
 
     return (
         <>
+            <CarsComponent cars={carsPaginatedObject.items}/>
+
             <div>
                 <button onClick={() => {
                     changePage('prev');
