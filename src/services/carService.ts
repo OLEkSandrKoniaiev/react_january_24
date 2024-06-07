@@ -20,10 +20,10 @@ axiosInstance.interceptors.request.use(request => {
 });
 
 const carService = {
-    getUserCars: async (): Promise<ICarPaginatedModel | null> => {
+    getUserCars: async (page?: string): Promise<ICarPaginatedModel | null> => {
 
         try {
-            const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
+            const response = await axiosInstance.get<ICarPaginatedModel>('/cars', {params: {page: page}});
             return response.data;
 
         } catch (e) {
@@ -32,7 +32,7 @@ const carService = {
             if (axiosError?.response?.status === 401) {
                 const refreshToken = retriveLocalStorageData<ITokenObtainPair>('tokenPair').refresh;
                 await authService.refresh(refreshToken);
-                return await carService.getUserCars();
+                return await carService.getUserCars(page);
             }
         }
 

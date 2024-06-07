@@ -1,20 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import {carService} from "../services/carService";
+import styles from "../styles/General.module.css"
+import PaginationComponent from "../components/Pagination/PaginationComponent";
 import CarsComponent from "../components/Cars/CarsComponent";
 import {ICarWithAuthModel} from "../models/ICarWithAuthModel";
-import styles from "../styles/General.module.css"
+import {carService} from "../services/carService";
 
 const CarsPage = () => {
 
-    const [cars, setCars] = useState<ICarWithAuthModel[]>();
+    const [carsObject, setCarsObject] = useState<ICarWithAuthModel[]>()
 
     useEffect(() => {
-        carService.getUserCars().then(value => setCars(value?.items));
+        carService.getUserCars().then(value => setCarsObject(value?.items));
     }, []);
 
     return (
         <div className={styles.justifyCenter}>
-            <CarsComponent cars={cars}/>
+            <CarsComponent cars={carsObject}/>
+            <PaginationComponent/>
         </div>
     );
 };
