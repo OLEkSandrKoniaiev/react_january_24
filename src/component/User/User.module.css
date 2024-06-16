@@ -1,0 +1,10 @@
+.userBlock {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+
+    width: 30%;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

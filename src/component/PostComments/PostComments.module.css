@@ -1,0 +1,19 @@
+.postCommentsBlock {
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.commentBlock {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

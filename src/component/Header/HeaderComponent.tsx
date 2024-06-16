@@ -1,15 +1,29 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import styles from "./Header.module.css"
 
 const HeaderComponent = () => {
     return (
-        <div>
-            <ul>
-                <li><NavLink to={'/'}>home</NavLink></li>
-                <li><NavLink to={'/users'}>users</NavLink></li>
-                <li><NavLink to={'/posts'}>posts</NavLink></li>
-                <li><NavLink to={'/userPosts'}>user posts</NavLink></li>
-            </ul>
+        <div className={styles.navBlock}>
+            <NavLink to={'/'} className={({isActive}) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                home
+            </NavLink>
+            <NavLink to={'/users'} className={({isActive}) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                users
+            </NavLink>
+            <NavLink to={'/posts'} className={({isActive}) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                posts
+            </NavLink>
+            <NavLink to={'/comments'} className={({isActive}) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                comments
+            </NavLink>
+            <NavLink to={'/users/posts'} className={({isActive}) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                users posts
+            </NavLink>
+            <NavLink to={'/posts/comments'}
+                     className={({isActive}) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                posts comments
+            </NavLink>
         </div>
     );
 };

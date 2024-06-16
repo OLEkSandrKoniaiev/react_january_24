@@ -1,0 +1,22 @@
+.navBlock {
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 20px 0;
+
+    background-color: #adadad;
+
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navLinkActive {
+    text-decoration: none;
+    color: blue;
+}

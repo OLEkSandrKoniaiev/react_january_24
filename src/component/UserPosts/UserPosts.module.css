@@ -1,0 +1,19 @@
+.userPostsBlock {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.postBlock {
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
