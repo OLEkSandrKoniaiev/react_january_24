@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {IPostModel} from "../../models/IPostModel";
-import {useContextProvider} from "../../context/ContextProvider";
+import {useStore} from "../../context/ContextProvider";
 import styles from "./Post.module.css"
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 
 const PostComponent: FC<IProps> = ({post}) => {
 
-    const {postStore: {setFavoritePost}} = useContextProvider();
+    const {postStore: {setFavoritePost}} = useStore();
 
     return (
         <div className={styles.postBlock}>
