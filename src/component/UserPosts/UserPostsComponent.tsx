@@ -16,7 +16,7 @@ const UserPostsComponent: FC<TypeProps> = ({user}) => {
             <b>{user.id} {user.name} - {user.username}</b>
             {
                 user.posts.map(post =>
-                    <div className={styles.postBlock}>
+                    <div className={styles.postBlock} key={post.id}>
                         <span><i>{post.id} {post.title}</i></span>
                         <span>{post.body}</span>
                     </div>)

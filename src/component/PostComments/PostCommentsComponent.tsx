@@ -12,7 +12,7 @@ const PostCommentsComponent: FC<TypeProps> = ({post}) => {
             <b>{post.id} {post.title}</b>
             {
                 post.comments.map(comment =>
-                    <div className={styles.commentBlock}>
+                    <div className={styles.commentBlock} key={comment.id}>
                         <span><i>{comment.id} {comment.email} {comment.name}</i></span>
                         <span>{comment.body}</span>
                     </div>)
