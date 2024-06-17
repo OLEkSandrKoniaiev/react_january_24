@@ -1,0 +1,26 @@
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.formBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100px;
+}
+
+.numberBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 40px;
+}
