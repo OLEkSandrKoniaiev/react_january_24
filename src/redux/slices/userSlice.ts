@@ -61,25 +61,15 @@ export const userSlice = createSlice({
                     state.users = action.payload;
                 })
             .addCase(
-                loadUsers.rejected,
-                (state, action) => {
-                    //...
-                })
-            .addCase(
                 loadUserById.fulfilled,
                 (state, action) => {
                     state.user = action.payload;
                 })
-            .addCase(
-                loadUserById.rejected,
-                (state, action) => {
-                    //...
-                })
             .addMatcher(isFulfilled(loadUsers, loadUserById), (state, action) => {
-                // state.isLoaded = true;
+                state.isLoaded = true;
             })
             .addMatcher(isRejected(loadUsers, loadUserById), (state, action) => {
-                // state.isLoaded = false;
+                state.isLoaded = false;
             })
 });
 

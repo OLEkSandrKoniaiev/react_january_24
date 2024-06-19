@@ -3,7 +3,6 @@ import {baseUrl, urls} from "../constants/urls";
 import {IUserModel} from "../models/IUserModel";
 import {IPostModel} from "../models/IPostModel";
 
-
 const axiosInstance = axios.create({
     baseURL: baseUrl,
     headers: {}

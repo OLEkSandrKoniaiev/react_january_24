@@ -1,0 +1,8 @@
+.postBlock {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

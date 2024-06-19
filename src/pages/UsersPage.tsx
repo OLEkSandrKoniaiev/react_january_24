@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import UsersComponent from "../components/Users/UsersComponent";
 import {userActions} from "../redux/slices/userSlice";
 import {useAppDispatch} from "../redux/store";
+import styles from "../styles/General.module.css"
 
 const UsersPage = () => {
 
@@ -12,7 +13,7 @@ const UsersPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.justifyCenter}>
             <UsersComponent/>
         </div>
     );
