@@ -1,0 +1,29 @@
+.headerBlock {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: dodgerblue;
+    height: 50px;
+
+    gap: 20px;
+
+    font-size: large;
+
+    padding: 0 10px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    padding: 0 10px;
+}
+
+.navLinkActive {
+    text-decoration: none;
+    color: snow;
+    font-weight: bold;
+
+    padding: 0 10px;
+}
